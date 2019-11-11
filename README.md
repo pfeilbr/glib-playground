@@ -2,6 +2,8 @@
 
 learn [GNOME | GLib](https://wiki.gnome.org/Projects/GLib)
 
+see [`main.c`](main.c)
+
 ## Prerequisites
 
 ```sh
