@@ -21,7 +21,7 @@ cmake .. && make
 ./glib-playground
 ```
 
-output
+**output**
 
 ![](https://www.evernote.com/l/AAGf1T2-fgtCd6uHZGme-lg4Wl3IeEdUV-UB/image.png)
 
