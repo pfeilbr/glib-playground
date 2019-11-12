@@ -39,6 +39,16 @@ static void list_files(const gchar *parent)
     g_dir_close(dir);
 }
 
+static void spawn_command_line_process()
+{
+    gchar *stdout, *stderr;
+    gint *exit_status;
+    GError *err;
+    g_spawn_command_line_sync("ls", &stdout, &stderr, exit_status, &err);
+    printf("stdout=%s\n", stdout);
+    printf("stderr=%s\n", stderr);
+}
+
 int main(int argc, char **argv)
 {
     GSList *list = NULL;
@@ -59,7 +69,9 @@ int main(int argc, char **argv)
     const gchar *last = g_hash_table_lookup(table, g_strdup("last"));
     printf("first=%s, last=%s\n", first, last);
 
-    list_files("/tmp");
+    list_files(g_get_current_dir());
+
+    spawn_command_line_process();
 
     return 0;
 }
